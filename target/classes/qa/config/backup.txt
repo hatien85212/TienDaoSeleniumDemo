@@ -1,0 +1,276 @@
+<div class="basic-typeahead__triggered-content search-global-typeahead__content
+                  " role="listbox" tabindex="-1" id="triggered-expanded-ember18">
+<div>
+        
+                        
+  <div id="basic-result-gwgski" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C4E03AQHVXBlm9ZLZWQ/profile-displayphoto-shrink_100_100/0/1624331601295?e=1629936000&amp;v=beta&amp;t=UFh97LAUEj6ugKVbmkNeAEnoryqVCCxeqqqm-xlM3vU" loading="lazy" height="32" alt="" id="ember669" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• You • Senior QC<!----></span><span class="visually-hidden"><!---->Self Senior QC<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-u1d21" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5603AQES8Lc62Iu8tQ/profile-displayphoto-shrink_100_100/0/1517546446667?e=1629936000&amp;v=beta&amp;t=9xiWMiLLZXhYjTndDAVRvrmlxdiLeCJCaTWpLEZc1vU" loading="lazy" height="32" alt="" id="ember670" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao Thi Ha<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 1st • Principle QC at TerraLogic Inc.<!----></span><span class="visually-hidden"><!---->1st degree connection Principle QC at TerraLogic Inc.<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-sy6r7r" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5603AQEjJaIQF3IC_g/profile-displayphoto-shrink_100_100/0/1585007159797?e=1629936000&amp;v=beta&amp;t=1OnsNEoDvz1ZkQ4gusxztxMvACn4lMhczSFo6qtKBJI" loading="lazy" height="32" alt="" id="ember671" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • Product Designer at Microsoft | I use user-centric design approach in every aspect of my work<!----></span><span class="visually-hidden"><!---->3rd+ degree connection Product Designer at Microsoft | I use user-centric design approach in every aspect of my work<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-16vjgd" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5103AQHMNh-ezfSz4w/profile-displayphoto-shrink_100_100/0/1516421679288?e=1629936000&amp;v=beta&amp;t=zFzYaUtZpyWSBIwdxuh8Jvw0OsRosVtVLbwzI_TH7ZM" loading="lazy" height="32" alt="" id="ember672" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • Manager at Hana Micron Vietnam<!----></span><span class="visually-hidden"><!---->3rd+ degree connection Manager at Hana Micron Vietnam<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-wa7o2v" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5603AQFmcvW9TzyXiw/profile-displayphoto-shrink_100_100/0/1594031962631?e=1629936000&amp;v=beta&amp;t=syTdTVpzVPeEzJaTAw80wUMRPLjnJhzqciqSfJmkVcQ" loading="lazy" height="32" alt="" id="ember673" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • Teachnical Owner<!----></span><span class="visually-hidden"><!---->3rd+ degree connection Teachnical Owner<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-xbdl6l" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5103AQHJLT7JUtCdIg/profile-displayphoto-shrink_100_100/0/1541994502987?e=1629936000&amp;v=beta&amp;t=3yqyKIkzuXtb06ZmL8iVDV62MM6I6QzCwgx-OM0oiA4" loading="lazy" height="32" alt="" id="ember674" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tiên Đào<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • HR Officer at Mantu<!----></span><span class="visually-hidden"><!---->3rd+ degree connection HR Officer at Mantu<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-njrv4p" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <div id="ember675" class="search-global-typeahead__hit-image ivm-image-view-model ember-view">  <div class="
+    ivm-view-attr__img-wrapper ivm-view-attr__img-wrapper--use-img-tag display-flex
+    
+  ">
+    <div class="EntityPhoto-square-1-ghost-company ivm-view-attr__ghost-entity search-typeahead-v2__image-scale">
+        <div class="visually-hidden"></div>
+    </div>
+</div>
+
+</div>
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao Christian Media Assn<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <!---->• Company • Publishing<!---->
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-oi5rda" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5603AQH1NeGfOnz0bA/profile-displayphoto-shrink_100_100/0/1516635419776?e=1629936000&amp;v=beta&amp;t=3rJ_OSVdwdmKJV7DFpw07n5B_Ra8WF9HaEE6v-9mzxQ" loading="lazy" height="32" alt="" id="ember676" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • Product Manager at Aumentum Technologies<!----></span><span class="visually-hidden"><!---->3rd+ degree connection Product Manager at Aumentum Technologies<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-41bd1d" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" loading="lazy" height="32" alt="" id="ember677" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ghost-person ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • Sr Network and Cloud Architect at Gartner Consulting<!----></span><span class="visually-hidden"><!---->3rd+ degree connection Sr Network and Cloud Architect at Gartner Consulting<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                        
+  <div id="basic-result-8or8ts" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                          <div class="search-global-typeahead__hit
+  
+  
+  
+  search-global-typeahead__hit--fixed-height">
+        <img width="32" src="https://media-exp1.licdn.com/dms/image/C5603AQFceiS0EpeJVg/profile-displayphoto-shrink_100_100/0/1517095183914?e=1629936000&amp;v=beta&amp;t=swYAZr9l78-Bo-lPUN-7qPyCb48_CBHxL5SR5CG7Vhs" loading="lazy" height="32" alt="" id="ember678" class="search-global-typeahead__hit-vector-image EntityPhoto-circle-1 mv1 flex-shrink-zero lazy-image ember-view">
+      <span class="search-global-typeahead__hit-info truncate">
+        <span class="search-global-typeahead__hit-text t-16 t-black t-normal">
+          <strong><!---->Tien Dao<!----></strong>
+        </span>
+
+          <span class="search-global-typeahead__hit-subtext t-12 t-black--light t-normal">
+            <span aria-hidden="true"><!---->• 3rd+ • Engineer<!----></span><span class="visually-hidden"><!---->3rd+ degree connection Engineer<!----></span>
+          </span>
+      </span>
+<!----></div>
+
+                        
+</div>
+
+
+                  
+  <div id="basic-result-5c6c7r" class="basic-typeahead__selectable   typeahead-suggestion search-global-typeahead__suggestion" role="option" aria-selected="false">
+  
+                    <div class="search-global-typeahead__hit
+  search-global-typeahead__hit--escape-hatch
+  
+  
+  ">
+    <span class="search-global-typeahead__hit-info truncate">
+      <span class="search-global-typeahead__hit-text t-16 t-black">
+        See all results
+      </span>
+    </span>
+</div>
+
+                  
+</div>
+
+
+                
+
+</div>
+  </div>

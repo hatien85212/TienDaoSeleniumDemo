@@ -1,0 +1,8 @@
+-------------------------------------------------------------------------------
+Test set: TestSuite
+-------------------------------------------------------------------------------
+Tests run: 9, Failures: 1, Errors: 0, Skipped: 5, Time elapsed: 49.292 s <<< FAILURE! - in TestSuite
+setUp(qa.testcases.LoginPageTest)  Time elapsed: 11.455 s  <<< FAILURE!
+java.lang.NullPointerException: null value in entry: url=null
+	at qa.testcases.LoginPageTest.setUp(LoginPageTest.java:23)
+
