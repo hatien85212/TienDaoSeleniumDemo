@@ -2,37 +2,22 @@ package qa.pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import qa.base.TestBase;
 
 public class HomePage extends TestBase {
-
-	@FindBy(xpath = "//td[contains(text(),'User: Naveen K')]")
-	@CacheLookup
-	WebElement userNameLabel;
-
-	@FindBy(xpath = "//a[contains(text(),'Contacts')]")
-	WebElement contactsLink;
-
-	@FindBy(xpath = "//a[contains(text(),'New Contact')]")
-	WebElement newContactLink;
-
-	@FindBy(xpath = "//a[contains(text(),'Deals')]")
-	WebElement dealsLink;
-
-	@FindBy(xpath = "//a[contains(text(),'Tasks')]")
-	WebElement tasksLink;
-
-	// LinkedIn Search, send message
+	
+	WebElement searchResultNameElement; //a search result name selector
+	WebElement addedMessageElement; //added message locator
+	
+	// LinkedIn Search
 	@FindBy(xpath = "//input[@aria-label='Search']")
-	WebElement searchBox;
+	static WebElement searchBox;
 
-	@FindBy(xpath = "//*[contains(text(), 'Tien Dao Thi Ha')]")
-	WebElement searchResultName;
+//	@FindBy(xpath = "//*[contains(text(), 'Tien Dao Thi Ha')]")
+//	WebElement searchResultName;
 
 	@FindBy(xpath = "//a[text()='Message']")
 	WebElement messageBtn;
@@ -49,56 +34,37 @@ public class HomePage extends TestBase {
 		PageFactory.initElements(driver, this);
 	}
 
-	public static String getPageTitle() {
-		return driver.getTitle();
+	public void search(String searchText) {
+		searchBox.sendKeys(searchText);
 	}
 
-	public boolean verifyCorrectUserName() {
-		return userNameLabel.isDisplayed();
+	public void clickSearchResult(String searchResultName) {
+//		searchResultName.click();
+		updateSearchResultNameXpath(searchResultName);
+		searchResultNameElement.click();
 	}
-
 	public void sendMessage(String msg) {
 		messageBtn.click();
 		message.sendKeys(msg);
 		clickOn(sendMesssageBtn, 20);
 	}
 
-	public void search(String searchText) {
-		searchBox.sendKeys(searchText);
-	}
-
-	public void clickSearchResult() {
-		searchResultName.click();
-	}
-
 	public boolean isAddedMessageDisplayed(String inputMessage) {
+		updateAddedMessageXpath(inputMessage);
+		return addedMessageElement.isDisplayed();
+	}
+	public boolean isSearchBoxDisplayed() {
+		return searchBox.isDisplayed();
+	}
+	
+	public void updateSearchResultNameXpath(String searchResultName) {
+		String xpathSearchResultName = "//*[contains(text(), '{searchResult}')]";
+		xpathSearchResultName = xpathSearchResultName.replace("{searchResult}", searchResultName);
+		searchResultNameElement = driver.findElement(By.xpath(xpathSearchResultName));
+	}
+	public void updateAddedMessageXpath(String inputMessage) {
 		String xpathAddedMessgae = "//p[text()='{addedMessage}']";
 		xpathAddedMessgae = xpathAddedMessgae.replace("{addedMessage}", inputMessage);
-		WebElement addedMessage = driver.findElement(By.xpath(xpathAddedMessgae));
-
-		return addedMessage.isDisplayed();
+		addedMessageElement = driver.findElement(By.xpath(xpathAddedMessgae));
 	}
-
-//	public ContactsPage clickOnContactsLink(){
-//		contactsLink.click();
-//		return new ContactsPage();
-//	}
-//	
-//	public DealsPage clickOnDealsLink(){
-//		dealsLink.click();
-//		return new DealsPage();
-//	}
-//	
-//	public TasksPage clickOnTasksLink(){
-//		tasksLink.click();
-//		return new TasksPage();
-//	}
-
-	public void clickOnNewContactLink() {
-		Actions action = new Actions(driver);
-		action.moveToElement(contactsLink).build().perform();
-		newContactLink.click();
-
-	}
-
 }

@@ -7,12 +7,8 @@ import org.testng.annotations.Test;
 
 import qa.base.TestBase;
 import qa.pages.HomePage;
-import qa.pages.LoginLinkedPage2;
 
 public class SendMessageTest extends TestBase {
-	LoginLinkedPage2 loginPage;
-	HomePage homePage;
-	
 	public SendMessageTest(){
 		super();
 	}
@@ -26,21 +22,24 @@ public class SendMessageTest extends TestBase {
 	@Test(priority=1)
 	public void sendMessageSuccess(){
 		String searchString = "Tien Dao";
+		String searchResultName = "Tien Dao Thi Ha";
 		
-		LinkedInLoginPageTest loginTest = new LinkedInLoginPageTest();
+		LoginPageTest loginTest = new LoginPageTest();
 		loginTest.loginSucess();
 		
-		homePage = new HomePage();
+		HomePage homePage = new HomePage();
 		homePage.search(searchString);
-		homePage.clickSearchResult();
+		homePage.clickSearchResult(searchResultName);
 		
+		//send message
 		String msg = "This is auto msg from chrome " + System.currentTimeMillis();
 		homePage.sendMessage(msg);
+		//verify the message is added
 		Assert.assertTrue(homePage.isAddedMessageDisplayed(msg), "Don't see added message; " + msg);
 	}
 	
 	@AfterMethod
 	public void tearDown(){
-//		driver.quit();
+		driver.quit();
 	}
 }

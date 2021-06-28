@@ -7,6 +7,7 @@ import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -72,5 +73,13 @@ public class TestBase {
 	public static void clickOn(WebElement locator, int timeout) {
 		new WebDriverWait(driver, timeout).ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
 		locator.click();
+	}
+	public void clickOnByJavaScript(WebElement locator) {
+		JavascriptExecutor js = (JavascriptExecutor)driver;
+
+		// Clicking the web element
+		js.executeScript("arguments[0].click();", locator);
+		new WebDriverWait(driver, TestUtil.PAGE_LOAD_TIMEOUT);
+
 	}
 }
