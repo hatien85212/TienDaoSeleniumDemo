@@ -27,7 +27,6 @@ public class HomePage extends BasePage {
 	@FindBy(id = "ember33")
 	WebElement btnMe;
 	
-//	@FindBy(xpath = "//a[contains(.,'Sign Out')]")
 	@FindBy(linkText = "Sign Out")
 	WebElement lnkSignOut;
 	
@@ -38,18 +37,21 @@ public class HomePage extends BasePage {
 		super(driver);
 	}
 
-	public void search(String searchText) {
+	public HomePage search(String searchText) {
 		txtSearch.sendKeys(searchText);
+		return this;
 	}
 
-	public void clickSearchResult(String searchResultName) {
+	public HomePage clickSearchResult(String searchResultName) {
 		updateSearchResultNameXpath(searchResultName);
 		searchResultNameElement.click();
+		return this;
 	}
-	public void sendMessage(String msg) {
+	public HomePage sendMessage(String msg) {
 		btnMessage.click();
 		txtMessage.sendKeys(msg);
 		clickOn(btnSend);
+		return this; 
 	}
 	public void signOut()
 	{
@@ -68,12 +70,12 @@ public class HomePage extends BasePage {
 		return lnkSignIn.isDisplayed();
 	}
 	
-	public void updateSearchResultNameXpath(String searchResultName) {
+	private void updateSearchResultNameXpath(String searchResultName) {
 		String xpathSearchResultName = "//*[contains(text(), '{searchResult}')]";
 		xpathSearchResultName = xpathSearchResultName.replace("{searchResult}", searchResultName);
 		searchResultNameElement = driver.findElement(By.xpath(xpathSearchResultName));
 	}
-	public void updateAddedMessageXpath(String inputMessage) {
+	private void updateAddedMessageXpath(String inputMessage) {
 		String xpathAddedMessgae = "//p[text()='{addedMessage}']";
 		xpathAddedMessgae = xpathAddedMessgae.replace("{addedMessage}", inputMessage);
 		addedMessageElement = driver.findElement(By.xpath(xpathAddedMessgae));

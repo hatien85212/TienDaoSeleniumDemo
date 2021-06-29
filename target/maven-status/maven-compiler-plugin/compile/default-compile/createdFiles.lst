@@ -1,6 +1,0 @@
-qa/pages/LoginLinkedPage.class
-qa/base/TestBase.class
-qa/util/WebEventListener.class
-qa/pages/HomePage.class
-qa/util/TestUtil.class
-qa/pages/LoginPage.class

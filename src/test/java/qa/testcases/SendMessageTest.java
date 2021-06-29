@@ -17,12 +17,10 @@ public class SendMessageTest extends BaseTest{
 		String msg = "This is auto msg from chrome " + System.currentTimeMillis();
 
 		loginPage = new LoginPage(getDriver());
-		HomePage homePage = loginPage.login(prop.getProperty("username"),prop.getProperty("password"));
+		HomePage homePage = new LoginPage(getDriver()).login(prop.getProperty("username"),prop.getProperty("password"));
 		Assert.assertTrue(homePage.isSearchBoxDisplayed(), "Don't see the search box");
 
-		homePage.search(searchString);
-		homePage.clickSearchResult(searchResultName);
-		homePage.sendMessage(msg);
+		homePage.search(searchString).clickSearchResult(searchResultName).sendMessage(msg);
 		Assert.assertTrue(homePage.isAddedMessageDisplayed(msg), "Don't see added message: " + msg);
 		
 		homePage.signOut();
