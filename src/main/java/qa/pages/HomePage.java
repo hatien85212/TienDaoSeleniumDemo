@@ -1,52 +1,60 @@
 package qa.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
 
-import qa.base.TestBase;
+import qa.base.BasePage;
 
-public class HomePage extends TestBase {
+public class HomePage extends BasePage {
 	
-	WebElement searchResultNameElement; //a search result name selector
-	WebElement addedMessageElement; //added message locator
+	WebElement searchResultNameElement;
+	WebElement addedMessageElement; 
 	
-	// LinkedIn Search
 	@FindBy(xpath = "//input[@aria-label='Search']")
-	static WebElement searchBox;
-
-//	@FindBy(xpath = "//*[contains(text(), 'Tien Dao Thi Ha')]")
-//	WebElement searchResultName;
+	WebElement txtSearch;
 
 	@FindBy(xpath = "//a[text()='Message']")
-	WebElement messageBtn;
+	WebElement btnMessage;
 
-	// Send message box
 	@FindBy(xpath = "//div[@aria-label='Write a message…']")
-	WebElement message;
+	WebElement txtMessage;
 
 	@FindBy(xpath = "//button[text()='Send']")
-	WebElement sendMesssageBtn;
+	WebElement btnSend;
+	
+	@FindBy(id = "ember33")
+	WebElement btnMe;
+	
+//	@FindBy(xpath = "//a[contains(.,'Sign Out')]")
+	@FindBy(linkText = "Sign Out")
+	WebElement lnkSignOut;
+	
+	@FindBy(linkText = "Sign in")
+	WebElement lnkSignIn;
 
-	// Initializing the Page Objects:
-	public HomePage() {
-		PageFactory.initElements(driver, this);
+	public HomePage(WebDriver driver) {
+		super(driver);
 	}
 
 	public void search(String searchText) {
-		searchBox.sendKeys(searchText);
+		txtSearch.sendKeys(searchText);
 	}
 
 	public void clickSearchResult(String searchResultName) {
-//		searchResultName.click();
 		updateSearchResultNameXpath(searchResultName);
 		searchResultNameElement.click();
 	}
 	public void sendMessage(String msg) {
-		messageBtn.click();
-		message.sendKeys(msg);
-		clickOn(sendMesssageBtn, 20);
+		btnMessage.click();
+		txtMessage.sendKeys(msg);
+		clickOn(btnSend);
+	}
+	public void signOut()
+	{
+		btnMe.click();
+		clickAfterMouseOverOn(lnkSignOut);
 	}
 
 	public boolean isAddedMessageDisplayed(String inputMessage) {
@@ -54,7 +62,10 @@ public class HomePage extends TestBase {
 		return addedMessageElement.isDisplayed();
 	}
 	public boolean isSearchBoxDisplayed() {
-		return searchBox.isDisplayed();
+		return txtSearch.isDisplayed();
+	}
+	public boolean isSignInDisplayed() {
+		return lnkSignIn.isDisplayed();
 	}
 	
 	public void updateSearchResultNameXpath(String searchResultName) {

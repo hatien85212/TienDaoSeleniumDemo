@@ -15,9 +15,9 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
-import qa.base.TestBase;
+import qa.base.BaseTest;
 
-public class TestUtil extends TestBase {
+public class TestUtil extends BaseTest {
 
 	public static long PAGE_LOAD_TIMEOUT = 30;
 	public static long IMPLICIT_WAIT = 30;

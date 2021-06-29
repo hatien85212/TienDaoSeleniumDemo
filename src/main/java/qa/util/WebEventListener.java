@@ -18,9 +18,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.events.WebDriverEventListener;
 
-import qa.base.TestBase;
+import qa.base.BasePage;
+import qa.base.BaseTest;
 
-public class WebEventListener extends TestBase implements WebDriverEventListener {
+public class WebEventListener extends BaseTest implements WebDriverEventListener {
 
 	public void beforeNavigateTo(String url, WebDriver driver) {
 		System.out.println("Before navigating to: '" + url + "'");
