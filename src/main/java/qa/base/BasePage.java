@@ -13,10 +13,11 @@ import org.openqa.selenium.support.PageFactory;
 
 public class BasePage {
 
-	private static final int TIMEOUT = 20;
+	private static final int TIMEOUT = 5;
 	private static final int POLLING = 100;
 
 	protected WebDriver driver;
+	protected String Path;
 	private WebDriverWait wait;
 
 	public BasePage(WebDriver driver) {
@@ -57,5 +58,8 @@ public class BasePage {
 
 	protected void waitForTextToDisappear(By locator, String text) {
 		wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
+	}
+	protected void waitForElementToBeClickable(WebElement locator) {
+		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}
 }

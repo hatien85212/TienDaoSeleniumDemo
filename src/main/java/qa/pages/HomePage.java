@@ -60,7 +60,8 @@ public class HomePage extends BasePage {
 	}
 
 	public boolean isAddedMessageDisplayed(String inputMessage) {
-		updateAddedMessageXpath(inputMessage);
+		By byAddedMessage = updateAddedMessageXpath(inputMessage);
+		waitForElementToAppear(byAddedMessage);
 		return addedMessageElement.isDisplayed();
 	}
 	public boolean isSearchBoxDisplayed() {
@@ -75,9 +76,10 @@ public class HomePage extends BasePage {
 		xpathSearchResultName = xpathSearchResultName.replace("{searchResult}", searchResultName);
 		searchResultNameElement = driver.findElement(By.xpath(xpathSearchResultName));
 	}
-	private void updateAddedMessageXpath(String inputMessage) {
-		String xpathAddedMessgae = "//p[text()='{addedMessage}']";
-		xpathAddedMessgae = xpathAddedMessgae.replace("{addedMessage}", inputMessage);
-		addedMessageElement = driver.findElement(By.xpath(xpathAddedMessgae));
+	private By updateAddedMessageXpath(String inputMessage) {
+		String xpathAddedMessage = "//p[text()='{addedMessage}']";
+		By byAddedMessage = By.xpath(xpathAddedMessage.replace("{addedMessage}", inputMessage));
+		addedMessageElement = driver.findElement(byAddedMessage);
+		return byAddedMessage;
 	}
 }
