@@ -20,9 +20,9 @@ public class LoginPage extends BasePage {
 		super(driver);
 	}
 
-	public HomePage login(String un, String pwd) {
-		txtUsername.sendKeys(un);
-		txtPassword.sendKeys(pwd);
+	public HomePage login(String username, String password) {
+		txtUsername.sendKeys(username);
+		txtPassword.sendKeys(password);
 		btnSignIn.click();
 		return new HomePage(driver);
 	}
