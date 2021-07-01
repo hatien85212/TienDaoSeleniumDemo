@@ -10,8 +10,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.events.EventFiringWebDriver;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
 import qa.util.WebEventListener;
 import qa.util.TestUtil;
@@ -36,9 +36,9 @@ public class BaseTest {
 		}
 	}
 	
-	@BeforeTest
+	@BeforeMethod
 	public static void setup() {
-		System.out.println("Initializing the browser");
+		System.out.println("@BeforeMethod -- Initializing the browser");
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
@@ -63,10 +63,10 @@ public class BaseTest {
 
 	}
 	
-	@AfterTest
+	@AfterMethod
 	public void tearDown()
 	{
-		System.out.println("tearDown");
+		System.out.println("@AfterMethod -- close browser");
 		driver.close();
 		driver.quit();
 	}
