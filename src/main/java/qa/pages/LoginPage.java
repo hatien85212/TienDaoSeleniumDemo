@@ -21,9 +21,12 @@ public class LoginPage extends BasePage {
 	}
 
 	public HomePage login(String username, String password) {
+		System.out.println("========== Start login... ==========");
+		waitForElementToBeClickable(btnSignIn);
 		txtUsername.sendKeys(username);
 		txtPassword.sendKeys(password);
 		btnSignIn.click();
+		System.out.println("========== End login... ==========");
 		return new HomePage(driver);
 	}
 }

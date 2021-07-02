@@ -2,28 +2,26 @@ package qa.base;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.PageFactory;
+
+import qa.util.WebConst;
 
 public class BasePage {
 
-	private static final int TIMEOUT = 5;
-	private static final int POLLING = 100;
-
 	protected WebDriver driver;
 	protected String Path;
-	private WebDriverWait wait;
+	protected WebDriverWait wait;
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, TIMEOUT, POLLING);
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, TIMEOUT), this);
+		wait = new WebDriverWait(driver, WebConst.EXPLICIT_WAIT, WebConst.EXPLICIT_POLLING);
+		PageFactory.initElements(new AjaxElementLocatorFactory(driver, WebConst.EXPLICIT_WAIT), this);
 	}
 	
 	protected String getPageTitle() {
@@ -31,8 +29,18 @@ public class BasePage {
 	}
 
 	protected void clickOn(WebElement locator) {
-		wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
-		locator.click();
+		int count=0;
+		do {
+			
+			try {
+//				wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+				waitForElementToBeClickable(locator);
+				locator.click();
+				count = 6;
+			} catch (Exception e) {
+				count++;
+			}
+		} while (count<=5);
 	}
 
 	protected void clickOnByJavaScript(WebElement locator) {
@@ -51,14 +59,26 @@ public class BasePage {
 	protected void waitForElementToAppear(By locator) {
 		wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
 	}
+	protected void waitForElementToAppear(WebElement locator) {
+		wait.until(ExpectedConditions.visibilityOf(locator));
+	}
 
 	protected void waitForElementToDisappear(By locator) {
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(locator));
 	}
-
-	protected void waitForTextToDisappear(By locator, String text) {
-		wait.until(ExpectedConditions.not(ExpectedConditions.textToBe(locator, text)));
+	
+	protected void waitForElementToDisappear(WebElement locator) {
+		wait.until(ExpectedConditions.invisibilityOf(locator));
 	}
+
+	protected void waitForTextToDisappear(WebElement locator, String text) {
+		wait.until(ExpectedConditions.not(ExpectedConditions.textToBePresentInElement(locator, text)));
+	}
+	
+	protected void waitForTextToAppear(WebElement locator, String text) {
+		wait.until(ExpectedConditions.textToBePresentInElement(locator, text));
+	}
+	
 	protected void waitForElementToBeClickable(WebElement locator) {
 		wait.until(ExpectedConditions.elementToBeClickable(locator));
 	}

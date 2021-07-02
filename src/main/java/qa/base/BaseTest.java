@@ -14,7 +14,7 @@ import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
 import qa.util.WebEventListener;
-import qa.util.TestUtil;
+import qa.util.WebConst;
 
 public class BaseTest {
 
@@ -26,7 +26,7 @@ public class BaseTest {
 	public BaseTest() {
 		try {
 			prop = new Properties();
-			FileInputStream config = new FileInputStream(System.getProperty("user.dir") + "/src/main/java/qa/config/config.properties");
+			FileInputStream config = new FileInputStream("src/test/resources/config.properties");
 			prop.load(config);
 			System.out.println("Run BaseTest");
 		} catch (FileNotFoundException e) {
@@ -42,10 +42,10 @@ public class BaseTest {
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
-			System.setProperty("webdriver.chrome.driver", prop.getProperty("chromeDriverPath"));
+			System.setProperty("webdriver.chrome.driver",WebConst.CHROME_DRIVER_PATH);
 			driver = new ChromeDriver();
 		} else if (browserName.equals("FF") || browserName.equals("firefox")) {
-			System.setProperty("webdriver.gecko.driver", prop.getProperty("firefoxDriverPath"));
+			System.setProperty("webdriver.gecko.driver",WebConst.FF_DRIVER_PATH);
 			driver = new FirefoxDriver();
 		}
 
@@ -56,8 +56,8 @@ public class BaseTest {
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(TestUtil.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(TestUtil.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(WebConst.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(WebConst.IMPLICIT_WAIT, TimeUnit.SECONDS);
 
 		driver.get(prop.getProperty("linkedInURL"));
 
