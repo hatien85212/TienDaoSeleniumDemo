@@ -38,31 +38,41 @@ public class HomePage extends BasePage {
 	}
 
 	public HomePage search(String searchText) {
+		log.info("========== Start search... ==========");
 		txtSearch.sendKeys(searchText);
+		log.info("========== End search... ==========");
 		return this;
 	}
 
 	public HomePage clickSearchResult(String searchResultName) {
+		log.info("========== Start clickSearchResult... ==========");
 		updateSearchResultNameXpath(searchResultName);
 		searchResultNameElement.click();
+		log.info("========== End clickSearchResult... ==========");
 		return this;
 	}
 	public HomePage sendMessage(String msg) {
+		log.info("========== Start sendMessage... ==========");
 		btnMessage.click();
 		txtMessage.sendKeys(msg);
 		clickOn(btnSend);
+		log.info("========== End sendMessage... ==========");
 		return this; 
 	}
 	public void signOut()
 	{
+		log.info("========== Start signOut... ==========");
 		btnMe.click();
 		clickAfterMouseOverOn(lnkSignOut);
+		log.info("========== End signOut... ==========");
 	}
 
 	public boolean isAddedMessageDisplayed(String inputMessage) {
+		log.info("========== Start isAddedMessageDisplayed... ==========");
 		By byAddedMessage = updateAddedMessageXpath(inputMessage);
 		waitForElementToAppear(byAddedMessage);
-		return addedMessageElement.isDisplayed();
+		log.info("========== End isAddedMessageDisplayed... ==========");
+		return true;
 	}
 	public boolean isSearchBoxDisplayed() {
 		return txtSearch.isDisplayed();

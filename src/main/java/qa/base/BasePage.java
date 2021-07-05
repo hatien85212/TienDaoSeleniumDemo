@@ -1,12 +1,12 @@
 package qa.base;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.pagefactory.AjaxElementLocatorFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -17,11 +17,14 @@ public class BasePage {
 	protected WebDriver driver;
 	protected String Path;
 	protected WebDriverWait wait;
+	protected Logger log;
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
 		wait = new WebDriverWait(driver, WebConst.EXPLICIT_WAIT, WebConst.EXPLICIT_POLLING);
-		PageFactory.initElements(new AjaxElementLocatorFactory(driver, WebConst.EXPLICIT_WAIT), this);
+//		PageFactory.initElements(new AjaxElementLocatorFactory(driver, WebConst.EXPLICIT_WAIT), this);
+		PageFactory.initElements(driver,this);
+		log = Logger.getLogger(BaseTest.class);
 	}
 	
 	protected String getPageTitle() {
@@ -29,24 +32,25 @@ public class BasePage {
 	}
 
 	protected void clickOn(WebElement locator) {
-		int count=0;
+		int count=1;
 		do {
 			
 			try {
 //				wait.ignoring(StaleElementReferenceException.class).until(ExpectedConditions.elementToBeClickable(locator));
+				log.info("***** clickOn with number of time ..." + count);
 				waitForElementToBeClickable(locator);
 				locator.click();
-				count = 6;
+				count = 3;
 			} catch (Exception e) {
+				log.info("***** clickOn with error occured..." + e.toString());
 				count++;
 			}
-		} while (count<=5);
+		} while (count<=2);
 	}
 
 	protected void clickOnByJavaScript(WebElement locator) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].click();", locator);
-
 	}
 
 	protected void clickAfterMouseOverOn(WebElement locator) {

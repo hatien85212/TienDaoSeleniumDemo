@@ -1,7 +1,7 @@
 package qa.util;
 
 public class WebConst {
-	public static int PAGE_LOAD_TIMEOUT = 30;
+	public static int PAGE_LOAD_TIMEOUT =20;
 	public static int IMPLICIT_WAIT = 20;
 	public static int EXPLICIT_WAIT = 5;
 	public static int EXPLICIT_POLLING = 100;

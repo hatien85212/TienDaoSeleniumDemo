@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
+import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -22,13 +23,15 @@ public class BaseTest {
 	public static Properties prop;
 	public static EventFiringWebDriver eDriver;
 	public static WebEventListener eventListener;
+	public static Logger log;
 
 	public BaseTest() {
 		try {
 			prop = new Properties();
 			FileInputStream config = new FileInputStream("src/test/resources/config.properties");
 			prop.load(config);
-			System.out.println("Run BaseTest");
+			log = Logger.getLogger(BaseTest.class);
+			log.info("Run BaseTest");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (IOException e) {
@@ -38,7 +41,7 @@ public class BaseTest {
 	
 	@BeforeMethod
 	public static void setup() {
-		System.out.println("@BeforeMethod -- Initializing the browser");
+		log.info("@BeforeMethod -- Initializing the browser");
 		String browserName = prop.getProperty("browser");
 
 		if (browserName.equals("chrome")) {
@@ -66,7 +69,7 @@ public class BaseTest {
 	@AfterMethod
 	public void tearDown()
 	{
-		System.out.println("@AfterMethod -- close browser");
+		log.info("@AfterMethod -- close browser");
 		driver.close();
 		driver.quit();
 	}
