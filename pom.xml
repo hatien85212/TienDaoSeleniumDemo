@@ -18,7 +18,7 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 		<maven.compiler.target>1.7</maven.compiler.target>
 		<maven.surefire.version>2.22.1</maven.surefire.version>
-<!-- 		<suiteXMLFile>src/test/resources/testng.xml</suiteXMLFile> -->
+		<suiteXMLFile>src/test/resources/testng.xml</suiteXMLFile>
 	</properties>
 
 
@@ -147,7 +147,7 @@
 				<version>${maven.surefire.version}</version>
 				<configuration>
 					<suiteXmlFiles>
-<!-- 						<suiteXmlFile>${suiteXMLFile}</suiteXmlFile> -->
+						<suiteXmlFile>${suiteXMLFile}</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
