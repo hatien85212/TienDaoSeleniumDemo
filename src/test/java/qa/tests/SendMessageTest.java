@@ -11,14 +11,12 @@ import qa.pages.HomePage;
 
 public class SendMessageTest extends BaseTest {
 	LoginPage loginPage;
-	WebDriver driver;
 
 	@Test(priority = 1, dataProvider = "SendMessageProvider")
 
 	public void verify_sending_message_succcessfully(String searchString, String searchResultName, String msg) {
 		msg = msg + System.currentTimeMillis();
 
-		driver = getDriver();
 		loginPage = new LoginPage(driver);
 		HomePage homePage = loginPage.login(prop.getProperty("username"), prop.getProperty("password"));
 		Assert.assertTrue(homePage.isSearchBoxDisplayed(), "Don't see the search box");
