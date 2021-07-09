@@ -1,6 +1,7 @@
 package JavaSessions;
 
 /*
+ * Exception types available in Java: ArithmeticException, FileNotFoundException, ArrayIndexOutOfBoundsException, SecurityException
  * How to use: try, catch, final
  * And throw a custom exception
  */
@@ -20,10 +21,6 @@ public class ExceptionMain {
 
 	}
 	
-	/*
-	 * The throw statement is used together with an exception type. 
-	 * Exception types available in Java: ArithmeticException, FileNotFoundException, ArrayIndexOutOfBoundsException, SecurityException
-	 */
 	static void checkAge(int age) {
 	    if (age < 18) {
 	      throw new ArithmeticException("Access denied - You must be at least 18 years old.");
