@@ -1,6 +1,6 @@
 package serializable;
 
-import java.io.FileInputStream;
+import java.io.FileInputStream; // to read the file in byte stream
 import java.io.IOException;
 import java.io.ObjectInputStream;
 

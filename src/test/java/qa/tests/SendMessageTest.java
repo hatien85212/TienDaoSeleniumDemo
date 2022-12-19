@@ -32,7 +32,7 @@ public class SendMessageTest extends BaseTest {
 
 	@DataProvider(name = "SendMessageProvider")
 	public Object[][] getDataFromDataprovider() {
-		return new Object[][] { { "Tien Dao", "Tien Dao Thi Ha", "This is auto msg from chrome with data provider " } };
+		return new Object[][] { { "Tien Dao Thi Ha", "Tien Dao Thi Ha", "This is auto msg from chrome with data provider " } };
 
 	}
 

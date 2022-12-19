@@ -16,6 +16,8 @@ public class SerializationExample {
 		try (FileOutputStream fos = new FileOutputStream(fileName);
 				ObjectOutputStream oos = new ObjectOutputStream(fos);) {
 			oos.writeObject(student);
+			System.err.println(student);
+//			Student student2 = 
 		} catch (IOException i) {
 			i.printStackTrace();
 		}
