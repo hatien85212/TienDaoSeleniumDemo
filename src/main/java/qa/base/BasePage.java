@@ -1,5 +1,7 @@
 package qa.base;
 
+import java.time.Duration;
+
 import org.apache.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
@@ -21,7 +23,7 @@ public class BasePage {
 
 	public BasePage(WebDriver driver) {
 		this.driver = driver;
-		wait = new WebDriverWait(driver, WebConst.EXPLICIT_WAIT, WebConst.EXPLICIT_POLLING);
+		wait = new WebDriverWait(driver, Duration.ofSeconds(WebConst.EXPLICIT_WAIT));
 //		PageFactory.initElements(new AjaxElementLocatorFactory(driver, WebConst.EXPLICIT_WAIT), this);
 		PageFactory.initElements(driver,this);
 		log = Logger.getLogger(BaseTest.class);

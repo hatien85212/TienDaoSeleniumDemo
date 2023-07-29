@@ -3,14 +3,16 @@ package qa.base;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.time.Duration;
 import java.util.Properties;
-import java.util.concurrent.TimeUnit;
 
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.support.events.EventFiringWebDriver;
+//import org.openqa.selenium.support.events.EventFiringWebDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -21,7 +23,7 @@ public class BaseTest {
 
 	public static WebDriver driver;
 	public static Properties prop;
-	public static EventFiringWebDriver eDriver;
+	public static EventFiringDecorator eDriver;
 	public static WebEventListener eventListener;
 	public static Logger log;
 
@@ -46,24 +48,32 @@ public class BaseTest {
 
 		if (browserName.equals("chrome")) {
 			System.setProperty("webdriver.chrome.driver",WebConst.CHROME_DRIVER_PATH);
-			driver = new ChromeDriver();
+			ChromeOptions options = new ChromeOptions(); // solve err on Chrome 111+:  WARNING: Invalid Status code=403 text=Forbidden
+			options.addArguments("--remote-allow-origins=*");
+			driver = new ChromeDriver(options);
 		} else if (browserName.equals("FF") || browserName.equals("firefox")) {
 			System.setProperty("webdriver.gecko.driver",WebConst.FF_DRIVER_PATH);
 			driver = new FirefoxDriver();
 		}
 
-		eDriver = new EventFiringWebDriver(driver);
-		eventListener = new WebEventListener();
-		eDriver.register(eventListener);
-		driver = eDriver;
+//		eDriver = new EventFiringWebDriver(driver);
+//		eventListener = new WebEventListener();
+//		eDriver.register(eventListener);
+//		driver = eDriver;
+		
+//		WebEventListener listener = new WebEventListener();// Create instance of Listener Class
+//		WebDriver decorated = new EventFiringDecorator(listener).decorate(driver);
+//		decorated.get("http://example.com/");
 
 		driver.manage().window().maximize();
 		driver.manage().deleteAllCookies();
-		driver.manage().timeouts().pageLoadTimeout(WebConst.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
-		driver.manage().timeouts().implicitlyWait(WebConst.IMPLICIT_WAIT, TimeUnit.SECONDS);
-
+//		driver.manage().timeouts().pageLoadTimeout(WebConst.PAGE_LOAD_TIMEOUT, TimeUnit.SECONDS);
+//		driver.manage().timeouts().implicitlyWait(WebConst.IMPLICIT_WAIT, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(WebConst.PAGE_LOAD_TIMEOUT));
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(WebConst.IMPLICIT_WAIT));
+		log.info("***** get linkkedInURL *******");
 		driver.get(prop.getProperty("linkedInURL"));
-
+		log.info("***** end get linkkedInURL *******");
 	}
 	
 	@AfterMethod

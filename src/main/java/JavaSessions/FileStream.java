@@ -24,6 +24,6 @@ public class FileStream {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-		FileMain.deleteFile(fileName);
+//		FileMain.deleteFile(fileName);
 	}
 }
