@@ -4,4 +4,4 @@
 /test-output/
 /screenshots/
 .env
-.log
+/logs
