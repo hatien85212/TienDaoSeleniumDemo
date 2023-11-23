@@ -1,4 +1,7 @@
+#ignoring the specific files
 /target/
 /target/
 /test-output/
 /screenshots/
+.env
+.log
